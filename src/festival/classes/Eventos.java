@@ -2,6 +2,7 @@ package festival.classes;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Eventos{
 	private Artista nome;
@@ -28,9 +29,11 @@ public class Eventos{
 	
 	@Override
 	public String toString() {
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
 		return String.format("""
-				Artista/Banda: %sData de Apresentação: %s
-				Horario de Apresentação: %s
-				""", nome, dataApresentacao, horarioApresentacao);
+				  Artista: %s  Data de Apresentação: %s
+				  Horario de Apresentação: %s
+				""", nome, df.format(dataApresentacao), horarioApresentacao);
 	}
 }

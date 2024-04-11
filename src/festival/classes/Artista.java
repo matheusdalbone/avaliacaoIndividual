@@ -1,7 +1,7 @@
 package festival.classes;
 
 public abstract class Artista {
-	protected String nome;
+	private String nome;
 	private double cache;
 	
 	public Artista(String nome, double cache) {
